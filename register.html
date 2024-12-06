@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexEther</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/459a3c1902.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="NexEther Logo" href="#home" class="logo-img click">
+      <div class="navcontainer">
+        <nav class="menu">
+          <a href="home.html" target="_blank">About Us</a>
+          <a href="home.html" target="_blank">Our Products</a>
+          <a href="home.html" target="_blank">Contact Us</a>
+          <a href="login.html" target="_blank">Sign Up</p></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section id="about">
+    <div class="about-section">
+      <Main>
+        <div class="about-container">
+          <div class="register-box">
+            <h1>Register</h1>
+            <p>Enter your information in the respective fields</p>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" placeholder="Password" required>
+                    <span class="toggle-visibility"><i class="fa-solid fa-lock"></i></span>
+                </div>
+                <div class="password-container">
+                    <input type="password" placeholder="Confirm Password" required>
+                    <span class="toggle-visibility"><i class="fa-solid fa-lock"></i></span>
+                </div>
+                <button type="submit">Register Now</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="login.html">Login in.</a></p>
+        </div>
+        </div>
+      </Main>
+  </div>
+</section>
+</html>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('.click');
+    
+      navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Message Sent!');
+    });
+  
+    const images = ['product1.png', 'product2.png', 'product3.png']; // List of images
+    let currentIndex = 0;
+    
+    const sliderImage = document.getElementById('slider-image');
+    const imageLeft = document.getElementById('image-left');
+    const imageRight = document.getElementById('image-right');
+    
+    function updateImages() {
+      const leftIndex = (currentIndex - 1 + images.length) % images.length;
+      const rightIndex = (currentIndex + 1) % images.length;
+    
+      imageLeft.src = images[leftIndex];
+      sliderImage.src = images[currentIndex];
+      imageRight.src = images[rightIndex];
+    }
+    
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateImages();
+    }
+    
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateImages();
+    }
+    
+    updateImages();
+    
+    document.querySelectorAll('.slider-images a').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        console.log('Image clicked:', event.target.alt); // Logs which image was clicked
+        // Uncomment the line below to prevent navigation temporarily
+        // event.preventDefault();
+      });
+    });
+    
+  
+  </script>
