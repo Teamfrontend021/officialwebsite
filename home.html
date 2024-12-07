@@ -23,21 +23,21 @@
       </div>
     </div>
   </header>
-<section id="home">
-  <div class="home-section">  
-    <main class="hero-section">
-    <div class="hero-content">
-      <h1>WECOME TO NEXETHER</h1>
-      <h2>
-        Empowering the Future of Blockchain
-      </h2>
-      <p>
-        At NexEther, Innovation meets decentralization we aree dedicated to creating blockchain solutions that push boundaries, empower users, and deliver transparancy. 
-      </p>
+  <section id="home">
+    <div class="home-section">  
+      <main class="hero-section">
+        <div class="hero-content">
+          <h1>WELCOME TO <br> <span>NEXETHER</span></h1>
+          <h2>
+            Empowering the Future of Blockchain
+          </h2>
+          <p>
+            At NexEther, innovation meets decentralization. We are dedicated to creating blockchain solutions that push boundaries, empower users, and deliver transparency.
+          </p>
+        </div>
+      </main>
     </div>
-  </main>
-  </div>
-</section>
+  </section>  
 
 <section id="about">
 <div class="about-section">
@@ -75,15 +75,35 @@
           <div class="image-slider">
             <button class="slider-btn left-btn" onclick="prevImage()">&#10094;</button>
             <div class="slider-images">
-              <a href="product3.html" target="_blank">
-                <img id="image-left" src="product3.png" alt="Previous Image">
-              </a>
-              <a href="product1.html" target="_blank">
-                <img id="slider-image" src="product1.png" alt="Current Image">
-              </a>
-              <a href="product2.html" target="_blank">
-                <img id="image-right" src="product2.png" alt="Next Image">
-              </a>
+              <div class="image-container">
+                <img src="product3.png" alt="Dating app">
+                <div class="layer">
+                  <h2>Dating App</h2>
+                  <a href="product3.html" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="image-container">
+                <img src="product1.png" alt="Arogya locker">
+                <div class="layer">
+                  <h2>Arogya Locker</h2>
+                  <a href="product1.html" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="image-container">
+                <img src="product2.png" alt="Decentralized browser">
+                <div class="layer">
+                  <h2>Decentralized Browser</h2>
+                  <a href="product2.html" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
             </div>
             <button class="slider-btn right-btn" onclick="nextImage()">&#10095;</button>
           </div>
@@ -98,7 +118,7 @@
         <main>
           <div class="contact-container">
             <h1>CONTACT US</h1>
-            <p>We are here to help you with anything!</p>
+            <p> <span>We are here to help you with anything!</span></p>
             <div class="arrange">
               <div class="left">
                 <form>
@@ -111,7 +131,7 @@
               <div class="right">
                 <div class="right-container">
                    <p>+91 8861644090 <br>feel free to call us! Our working hours are:Mon-sat 9am-5pm</p>
-                   <p><span>contactxyz@nexether.com</span> <br>Have aany questions or concerns? Contact our Support team!</p>
+                   <p>contactxyz@nexether.com <br>Have aany questions or concerns? Contact our Support team!</p>
                    <p>123 xyz street, district, state, country - 123456 <br>headquarters</p>
                 </div>
               </div>
@@ -123,26 +143,46 @@
       </div>
     </section>
   
-    <footer>
-      <div class="footer-info">
-        <div>
-          <h4>Our Address</h4>
-          <p>NexEther<br>Bengaluru<br>Karnataka</p>
-        </div>
-        <div>
-          <h4>Our Contacts</h4>
-          <p>+91 9876543210<br>contactus@nexether.com</p>
-        </div>
+<section>
+  <div class="end-section">
+    <main>
+        <div class="end-container">
+          <div class="sort">
+            <div class="first">
+              <img src="logo.png" alt="NexEther Logo" href="#home" class="logo-img click">
+            </div>
+            <div class="second">
+              <h1>Join our mailing list</h1>
+              <p>Be the first to know about exclusive offers, and more!</p>
+              <form action="subscribe">
+                <input type="email" placeholder="Email">
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+            <div class="third">
+              <h1>Our Products</h1>
+              <a href="product1.html" target="_blank">Arogya Locker</a>
+              <a href="product2.html" target="_blank">decentralized browser</a>
+              <a href="product3.html" target="_blank">Social Media</a>  
+            </div>
+            <div class="fourth">
+              <h1>Follow Us</h1>
+              <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </main>
+      </div>      
       </div>
-      <div class="social">
-        <a href="#">LinkedIn</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
-        <p>— Follow us</p>
-      </div>
-    </footer>
+    </section>
+
 </body>
 </html>
+
+
 <script>
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -164,42 +204,65 @@
     e.preventDefault();
     alert('Message Sent!');
   });
-
-  const images = ['product1.png', 'product2.png', 'product3.png']; // List of images
-  let currentIndex = 0;
-  
-  const sliderImage = document.getElementById('slider-image');
-  const imageLeft = document.getElementById('image-left');
-  const imageRight = document.getElementById('image-right');
-  
-  function updateImages() {
-    const leftIndex = (currentIndex - 1 + images.length) % images.length;
-    const rightIndex = (currentIndex + 1) % images.length;
-  
-    imageLeft.src = images[leftIndex];
-    sliderImage.src = images[currentIndex];
-    imageRight.src = images[rightIndex];
-  }
-  
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImages();
-  }
-  
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImages();
-  }
-  
-  updateImages();
   
   document.querySelectorAll('.slider-images a').forEach((link) => {
     link.addEventListener('click', (event) => {
-      console.log('Image clicked:', event.target.alt); // Logs which image was clicked
-      // Uncomment the line below to prevent navigation temporarily
-      // event.preventDefault();
+      console.log('Image clicked:', event.target.alt);
     });
   });
   
+
+document.querySelectorAll('.slider-images a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    console.log('Image clicked:', event.target.alt); 
+  });
+});
+
+
+let currentIndex = 0; // Start with the first image
+const images = document.querySelectorAll('.image-container');
+const totalImages = images.length;
+
+function updateImages() {
+  images.forEach((image, index) => {
+    const position = (index - currentIndex + totalImages) % totalImages; // Calculate position relative to current index
+    if (position === 0) {
+      // Center image
+      image.style.transform = 'translateX(0) scale(1.2)';
+      image.style.opacity = '1';
+      image.style.zIndex = '1';
+    } else if (position === 1 || position === -totalImages + 1) {
+      // Right image
+      image.style.transform = 'translateX(120%) scale(1)';
+      image.style.opacity = '0.6';
+      image.style.zIndex = '0';
+    } else if (position === -1 || position === totalImages - 1) {
+      // Left image
+      image.style.transform = 'translateX(-120%) scale(1)';
+      image.style.opacity = '0.6';
+      image.style.zIndex = '0';
+    } else {
+      image.style.transform = 'translateX(200%)';
+      image.style.opacity = '0';
+      image.style.zIndex = '-1';
+    }
+  });
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % totalImages;
+  updateImages();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+  updateImages();
+}
+
+setInterval(nextImage, 3500);
+
+updateImages();
+
+
 
 </script>
